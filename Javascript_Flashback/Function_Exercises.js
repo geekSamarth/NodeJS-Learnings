@@ -23,3 +23,25 @@ const calculateTotal = (price, quantity) => {
 };
 const totalCost = calculateTotal(450, 12);
 // console.log(totalCost);
+
+//  4- Write a function named 'processTeaOrder' that takes another function, 'makeTea' as a parameter and call it with the argument ' earl grey'. Return the result of calling 'makeTea'.
+
+function makeTea(typeOfTea) {
+  return `makeTea: ${typeOfTea}`;
+}
+
+function processTeaOrder(teaFunction) {
+  return teaFunction("earl grey");
+}
+let order = processTeaOrder(makeTea);
+// console.log(order);
+
+// 5- Write a function named 'createTeaMaker' that returns another function. The returned function should take one parameter, 'teaType', and return a message like 'Making green tea'. Store the returned function in a varible named 'teaMaker' and call it with 'green tea'.
+
+function createTeaMaker(name) {
+  return function (teaType) {
+    return `Making ${teaType}, ${name}`;
+  };
+}
+const teaMaker = createTeaMaker("Samarth");
+console.log(teaMaker("green tea"));

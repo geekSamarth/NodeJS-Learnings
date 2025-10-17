@@ -79,15 +79,17 @@ router.post("/login", async (req, res) => {
   //   generate a token for user
 
   const payload = {
-    id:existingUser.id,
-    name:existingUser.name,
-    email:existingUser.email
-  }
+    id: existingUser.id,
+    name: existingUser.name,
+    email: existingUser.email,
+  };
 
-const token  = jwt.sign(payload,process.env.JWT_SECRET)
+  const token = jwt.sign(payload, process.env.JWT_SECRET);
 
-  return res
-    .status(200)
-    .json({ status: "Success", message: "User loggedIn successfully !",token });
+  return res.status(200).json({
+    status: "Success",
+    message: "User loggedIn successfully !",
+    token,
+  });
 });
 export default router;

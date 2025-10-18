@@ -3,6 +3,7 @@ import db from "../db/index.js";
 import { usersTable } from "../db/schema.js";
 import { eq } from "drizzle-orm";
 import { createHmac, randomBytes } from "crypto";
+import { ensureAuthenticated } from "../middlewares/auth.middlewares.js";
 const router = express.Router();
 router.get("/");
 
